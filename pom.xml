@@ -65,7 +65,7 @@
                     </executions>
                 </plugin>
             </plugins>
-        </pluginManagement>
+        
             </build>
         </profile>
     </profiles>
@@ -238,5 +238,6 @@
                 </configuration>
             </plugin>
         </plugins>
+          </pluginManagement>
     </build>
 </project>
