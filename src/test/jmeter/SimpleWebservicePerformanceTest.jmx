@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="2.4" jmeter="2.9 r1437961">
+<jmeterTestPlan version="1.2" properties="2.7" jmeter="2.12 r1636949">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Simple Webservice Performance Test Plan" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -15,43 +15,43 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="HOST" elementType="Argument">
             <stringProp name="Argument.name">HOST</stringProp>
-            <stringProp name="Argument.value">${__P(webservice.host,localhost)}</stringProp>
+            <stringProp name="Argument.value">www.google.com</stringProp>
             <stringProp name="Argument.desc">Hostname (or IP) of the webservice to test.</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PORT" elementType="Argument">
             <stringProp name="Argument.name">PORT</stringProp>
-            <stringProp name="Argument.value">${__P(webservice.port,8080)}</stringProp>
+            <stringProp name="Argument.value">80</stringProp>
             <stringProp name="Argument.desc">Port of the webservice.</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PATH" elementType="Argument">
             <stringProp name="Argument.name">PATH</stringProp>
-            <stringProp name="Argument.value">${__P(webservice.path,/)}</stringProp>
+            <stringProp name="Argument.value">/</stringProp>
             <stringProp name="Argument.desc">Path to the webservice.</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="CONNECT_TIMEOUT" elementType="Argument">
             <stringProp name="Argument.name">CONNECT_TIMEOUT</stringProp>
-            <stringProp name="Argument.value">${__P(webservice.connectTimeout,1000)}</stringProp>
+            <stringProp name="Argument.value">8000</stringProp>
             <stringProp name="Argument.desc">Timeout when connecting to webservice.</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="RESPONSE_TIMEOUT" elementType="Argument">
             <stringProp name="Argument.name">RESPONSE_TIMEOUT</stringProp>
-            <stringProp name="Argument.value">${__P(webservice.responseTimeout,3000)}</stringProp>
+            <stringProp name="Argument.value">8000</stringProp>
             <stringProp name="Argument.desc">Webservice response timeout.</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="THREADCOUNT" elementType="Argument">
             <stringProp name="Argument.name">THREADCOUNT</stringProp>
-            <stringProp name="Argument.value">${__P(threadCount, 20)}</stringProp>
+            <stringProp name="Argument.value">20</stringProp>
             <stringProp name="Argument.desc">Maximal number of concurrent threads.</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="LOOPCOUNT" elementType="Argument">
             <stringProp name="Argument.name">LOOPCOUNT</stringProp>
-            <stringProp name="Argument.value">${__P(loopCount, 10)}</stringProp>
+            <stringProp name="Argument.value">2</stringProp>
             <stringProp name="Argument.desc">Number of iterations for each thread.</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -150,6 +150,10 @@
         <boolProp name="graph_aggregated">false</boolProp>
         <stringProp name="include_sample_labels"></stringProp>
         <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
       </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
       <hashTree/>
       <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ResponseTimesOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Response Times Over Time" enabled="true">
@@ -187,6 +191,10 @@
         <boolProp name="graph_aggregated">false</boolProp>
         <stringProp name="include_sample_labels"></stringProp>
         <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
       </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
       <hashTree/>
       <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="true">
@@ -219,11 +227,15 @@
             <threadCounts>true</threadCounts>
           </value>
         </objProp>
-        <stringProp name="filename"></stringProp>
+        <stringProp name="filename">/home/aurigalaptop/Desktop/SimpleWebservicePerformanceTest.jtl</stringProp>
         <longProp name="interval_grouping">1000</longProp>
         <boolProp name="graph_aggregated">false</boolProp>
         <stringProp name="include_sample_labels"></stringProp>
         <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
       </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
       <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
@@ -256,7 +268,40 @@
             <threadCounts>true</threadCounts>
           </value>
         </objProp>
-        <stringProp name="filename"></stringProp>
+        <stringProp name="filename">/home/aurigalaptop/Desktop/SimpleWebservicePerformanceTest.jtl</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+          </value>
+        </objProp>
+        <stringProp name="filename">/home/aurigalaptop/Desktop/SimpleWebservicePerformanceTest.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
     </hashTree>
