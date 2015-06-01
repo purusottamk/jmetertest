@@ -15,7 +15,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="HOST" elementType="Argument">
             <stringProp name="Argument.name">HOST</stringProp>
-            <stringProp name="Argument.value">www.google.com</stringProp>
+            <stringProp name="Argument.value">www.trello.com</stringProp>
             <stringProp name="Argument.desc">Hostname (or IP) of the webservice to test.</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
